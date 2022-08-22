@@ -5,7 +5,7 @@ function playerDisplay(playerInfo){
 
     const updatePlyerName = document.getElementById('player-details')
     updatePlyerName.innerHTML ="";
-
+     
     for(let i=0;i<playerInfo.length;i++){
         const name = playerNameArr[i].newPlayerName;
         const tr = document.createElement("tr");
@@ -14,6 +14,7 @@ function playerDisplay(playerInfo){
             <td>${name}</td>
         `;
         updatePlyerName.appendChild(tr);
+        
     }
 }
 
@@ -31,3 +32,14 @@ function addToPlayerName(element){
     playerDisplay(playerNameArr);
 
 }
+document.getElementById('calculate-btn').addEventListener('click',function(){
+    const valueInput = inputFieldValue('Amount-input');
+    const playerExpenseAmount = playerNameArr.length*valueInput;
+
+
+    const previousPlayerExpense  = elementValueById('player-expense');
+
+    const newPlayerExpense = previousPlayerExpense+playerExpenseAmount;
+    setTextElementValueById('player-expense',newPlayerExpense);
+    
+})

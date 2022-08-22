@@ -184,28 +184,39 @@
               <div class="mt-12">
                 <h2 class="text-4xl text-white text-center">Budget</h2>
 
-                <div class="form-control mb-3 mt-4">
+                <div class="form-control mx-24 mb-3 mt-4 ">
                     <label class="input-group">
                       <span class="text-white">Per Player:</span>
-                      <input type="text" placeholder="Enter Amount" class="input input-bordered" />
+                      <input type="text" placeholder="Enter Amount" id="Amount-input" class="input input-bordered" />
                     </label>
                   </div>
-                <button  id="deposite-btn" class="bg-rose-600 text-white font-bold rounded-lg hover:bg-purple-600 mx-3 px-5 py-2 text-white "> Calculate</button>
+                <button  id="calculate-btn" class="bg-rose-600 text-white font-bold rounded-lg hover:bg-purple-600 mx-32 px-5 py-2 text-white "> Calculate</button>
+                <div class="flex flex-auto gap-2 mt-3 mb-3">
+                    <p >Player Expenses:</p>
+                  <p>$<span id="player-expense">00</span></p>
+                </div>
                 <!-- Total-Calculate -->
-                <div class="form-control mb-3 mt-4">
+                <div class="form-control mx-24 mb-3 mt-4">
                     <label class="input-group">
                       <span class="text-white">Manager:</span>
-                      <input type="text" placeholder="Enter Amount" class="input input-bordered" />
+                      <input type="text" id="manager-amount" placeholder="Enter Amount" class="input input-bordered" />
                     </label>
                 </div>
-                <div class="form-control mb-3 mt-4">
+                <div class="form-control mx-24 mb-3 mt-4">
                     <label class="input-group">
-                      <span class="text-white">Coach:</span>
-                      <input type="text" placeholder="Enter Amount" class="input input-bordered" />
+                      <span class="text-white">Coach : </span>
+                      <input type="text" id="coach-amount" placeholder="Enter Amount" class="input input-bordered" />
                     </label>
                   </div>
-                <button  id="deposite-btn" class="bg-rose-600 text-white font-bold rounded-lg hover:bg-purple-600 mx-3 px-5 py-2 text-white "> Calculate To~tal</button>
-
+                  <div class="flex flex-auto gap-2 mt-3 mb-3 hidden">
+                    <p >Player Expenses:</p>
+                  <p>$<span id="both-expense">00</span></p>
+                </div>
+                <button  id="Total-btn" class="bg-rose-600 text-white font-bold rounded-lg hover:bg-purple-600 mx-32 px-5 py-2 text-white "> Calculate Total</button>
+                <div class="flex flex-auto gap-2 mt-3 mb-3">
+                    <p >Player Expenses:</p>
+                  <p>$<span id="total-expense">00</span></p>
+                </div>
 
               </div>
         </div>
@@ -227,7 +238,7 @@
             </div>
           </footer>
     </footer>
-    
+    <script src="js/common.js"></script>
     <script src="js/playerName.js"></script>
     <script src="js/calculate.js"></script>
 </body>
