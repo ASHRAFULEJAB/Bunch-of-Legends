@@ -16,10 +16,12 @@ function playerDisplay(playerInfo){
         updatePlyerName.appendChild(tr);
         
     }
+    
 }
 
-function addToPlayerName(element){
 
+function addToPlayerName(element){
+  
     const newPlayerName = element.parentNode.parentNode.children[0].innerText;
     // console.log(newPlayerName);
 
@@ -30,9 +32,19 @@ function addToPlayerName(element){
 
     document.getElementById('new-player-added').innerText=playerNameArr.length;
     playerDisplay(playerNameArr);
+    document.getElementById("myBtn").disabled = true;
+}
 
+// disbaling button
+
+var buttons = document.getElementsByTagName('button');
+for(let i=0;i<buttons.length;i++){
+    buttons[i].addEventListener('click', function(event){
+        event.target.disabled = true;
+    });
 }
 document.getElementById('calculate-btn').addEventListener('click',function(){
+  
     const valueInput = inputFieldValue('Amount-input');
     const playerExpenseAmount = playerNameArr.length*valueInput;
 
@@ -42,4 +54,9 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     const newPlayerExpense = previousPlayerExpense+playerExpenseAmount;
     setTextElementValueById('player-expense',newPlayerExpense);
     
+    
 })
+// const buttons = document.querySelectorAll('button'):
+// for(const button of buttons){
+//     button.disabled=true;
+// }
