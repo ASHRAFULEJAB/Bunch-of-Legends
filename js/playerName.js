@@ -48,6 +48,7 @@ for(let i=0;i<buttons.length;i++){
         event.target.disabled = true;
     });
 }
+// Player Calculation
 document.getElementById('calculate-btn').addEventListener('click',function(){
   
     const valueInput = inputFieldValue('Amount-input');
