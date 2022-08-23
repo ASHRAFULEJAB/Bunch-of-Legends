@@ -23,7 +23,7 @@ function playerDisplay(playerInfo){
 function addToPlayerName(element){
   
     const newPlayerName = element.parentNode.parentNode.children[0].innerText;
-    // console.log(newPlayerName);
+    
 
     const playerrObj = {
         newPlayerName : newPlayerName,
@@ -35,9 +35,9 @@ function addToPlayerName(element){
         playerDisplay(playerNameArr);
     }
     else{
-        alert('You Canot Select More Than 6 Player!')
+        alert('You Canot Select More Than 5 Player!')
     }
-    // document.getElementById("myBtn").disabled = true;
+    
 }
 
 // disbaling button
@@ -55,8 +55,10 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     if(variable.length >5){
      variable.length=5;
      playerExpenseAmount = playerNameArr.length*valueInput;
-    //  return playerExpenseAmount;
-}
+
+     }else if(variable.length <5 ){
+        playerExpenseAmount = playerNameArr.length*valueInput;
+     }
     
 
     const previousPlayerExpense  = elementValueById('player-expense');
@@ -66,7 +68,3 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
     
     
 })
-// const buttons = document.querySelectorAll('button'):
-// for(const button of buttons){
-//     button.disabled=true;
-// }
