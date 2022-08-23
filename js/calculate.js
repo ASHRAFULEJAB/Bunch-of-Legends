@@ -1,3 +1,4 @@
+// Calculating Total Part
 document.getElementById('Total-btn').addEventListener('click',function(){
     
     const mangerInput = inputFieldValue('manager-amount');
