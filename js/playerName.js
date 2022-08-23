@@ -1,11 +1,11 @@
 
-const playerNameArr = [];
+const  playerNameArr = [];
 
 function playerDisplay(playerInfo){
 
     const updatePlyerName = document.getElementById('player-details')
     updatePlyerName.innerHTML ="";
-     
+   
     for(let i=0;i<playerInfo.length;i++){
         const name = playerNameArr[i].newPlayerName;
         const tr = document.createElement("tr");
@@ -30,9 +30,14 @@ function addToPlayerName(element){
     }
     playerNameArr.push(playerrObj);
 
-    document.getElementById('new-player-added').innerText=playerNameArr.length;
-    playerDisplay(playerNameArr);
-    document.getElementById("myBtn").disabled = true;
+    if(playerNameArr.length <6){
+        document.getElementById('new-player-added').innerText=playerNameArr.length;
+        playerDisplay(playerNameArr);
+    }
+    else{
+        alert('You Canot Select More Than 6 Player!')
+    }
+    // document.getElementById("myBtn").disabled = true;
 }
 
 // disbaling button
@@ -46,8 +51,13 @@ for(let i=0;i<buttons.length;i++){
 document.getElementById('calculate-btn').addEventListener('click',function(){
   
     const valueInput = inputFieldValue('Amount-input');
-    const playerExpenseAmount = playerNameArr.length*valueInput;
-
+    let variable = playerNameArr;
+    if(variable.length >5){
+     variable.length=5;
+     playerExpenseAmount = playerNameArr.length*valueInput;
+    //  return playerExpenseAmount;
+}
+    
 
     const previousPlayerExpense  = elementValueById('player-expense');
 
