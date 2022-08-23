@@ -57,7 +57,7 @@ document.getElementById('calculate-btn').addEventListener('click',function(){
      variable.length=5;
      playerExpenseAmount = playerNameArr.length*valueInput;
 
-     }else if(variable.length <5 ){
+     }else if(variable.length <=5 ){
         playerExpenseAmount = playerNameArr.length*valueInput;
      }
     
